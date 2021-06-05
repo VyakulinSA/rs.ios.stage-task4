@@ -6,9 +6,9 @@ final class FillWithColor {
     
     func fillWithColor(_ image: [[Int]], _ row: Int, _ column: Int, _ newColor: Int) -> [[Int]] {
         //делаем все проверки по условию задачи
-        guard row >= 0 && row <= image.count &&
+        guard row >= 0 && row < image.count &&
                 image.count >= 1 && image.count <= 50 &&
-                column >= 0 && column <= image[row].count &&
+                column >= 0 && column < image[row].count &&
                 image[row].count >= 1 && image[row].count <= 50 &&
                 image[row][column] >= 0 && image[row][column] < 65536 &&
                 newColor >= 0 && newColor < 65536
@@ -28,7 +28,8 @@ final class FillWithColor {
         guard
             i >= 0 && i < imagePixels.count &&
             j >= 0 && j < imagePixels[i].count &&
-            imagePixels[i][j] == template
+            imagePixels[i][j] == template &&
+            imagePixels[i][j] != newColor
         else {return}
         
         imagePixels[i][j] = newColor //если все хорошо красим
