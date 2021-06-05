@@ -3,31 +3,54 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "CallStation.add(user:):CallStation.swift">
+      </ContextState>
+      <ContextState
+         contextName = "StationTests.test_simpleCall_error_1():StationTests.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CallStation.execute(action:):CallStation.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "usersBase.contains(from)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "FillWithColor.fillWithColor(_:_:_:_:):FillWithColor.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CallStation.currentCall(user:):CallStation.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CallStation.call(id:):CallStation.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CallStation.calls():CallStation.swift">
       </ContextState>
       <ContextState
          contextName = "FillWithColor.markPixel(_:_:):FillWithColor.swift">
          <PersistentStrings>
             <PersistentString
-               value = "i &gt; 0 ">
+               value = "imagePixels[i][j] &lt; 65536">
             </PersistentString>
             <PersistentString
-               value = "template">
+               value = "i &gt; 0 ">
             </PersistentString>
             <PersistentString
                value = "j &lt;= (imagePixels[i].count - 1)">
             </PersistentString>
             <PersistentString
-               value = "imagePixels[i].count">
+               value = "imagePixels[i][j] &gt;= 0">
             </PersistentString>
             <PersistentString
                value = "imagePixels[i][j] ">
             </PersistentString>
             <PersistentString
-               value = "imagePixels[i][j] &lt; 65536">
+               value = "template">
             </PersistentString>
             <PersistentString
-               value = "imagePixels[i][j] &gt;= 0">
+               value = "imagePixels[i].count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
