@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "FillWithColor.fillWithColor(_:_:_:_:):FillWithColor.swift">
+      </ContextState>
+      <ContextState
+         contextName = "FillWithColor.markPixel(_:_:):FillWithColor.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "i &gt; 0 ">
+            </PersistentString>
+            <PersistentString
+               value = "template">
+            </PersistentString>
+            <PersistentString
+               value = "j &lt;= (imagePixels[i].count - 1)">
+            </PersistentString>
+            <PersistentString
+               value = "imagePixels[i].count">
+            </PersistentString>
+            <PersistentString
+               value = "imagePixels[i][j] ">
+            </PersistentString>
+            <PersistentString
+               value = "imagePixels[i][j] &lt; 65536">
+            </PersistentString>
+            <PersistentString
+               value = "imagePixels[i][j] &gt;= 0">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
