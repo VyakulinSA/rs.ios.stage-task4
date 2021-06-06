@@ -14,7 +14,7 @@ protocol Station {
     func currentCall(user: User) -> Call? // .calling or .talk call
 }
 
-enum CallAction {
+enum CallAction: Equatable {
     case start(from: User, to: User)
     case answer(from: User)
     case end(from: User)
