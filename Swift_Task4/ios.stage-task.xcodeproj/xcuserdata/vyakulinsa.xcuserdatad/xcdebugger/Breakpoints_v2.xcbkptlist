@@ -39,6 +39,70 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "C884714B-C929-46F4-97C6-EBAE6000004E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios.stage-task/Exercises/Exercise-3/CallStation.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "currentCall(user:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "82F10F98-9A06-4CCB-93AC-0C8EB0820661"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios.stage-task/Exercises/Exercise-3/CallStation.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "currentCall(user:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "82F10F98-9A06-4CCB-93AC-0C8EB0820661 - 515cea84776aa6b7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ios_stage_task.CallStation.currentCall(user: ios_stage_task.User) -&gt; Swift.Optional&lt;ios_stage_task.Call&gt;"
+                  moduleName = "ios.stage-task"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vyakulinsa/Desktop/RSSchool_Tasks/RSSchool_Task4/rs.ios.stage-task4/Swift_Task4/ios.stage-task/Exercises/Exercise-3/CallStation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "200">
+               </Location>
+               <Location
+                  uuid = "82F10F98-9A06-4CCB-93AC-0C8EB0820661 - e22d07a492c0885c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (ios_stage_task.Call) -&gt; Swift.Optional&lt;ios_stage_task.Call&gt; in ios_stage_task.CallStation.currentCall(user: ios_stage_task.User) -&gt; Swift.Optional&lt;ios_stage_task.Call&gt;"
+                  moduleName = "ios.stage-task"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vyakulinsa/Desktop/RSSchool_Tasks/RSSchool_Task4/rs.ios.stage-task4/Swift_Task4/ios.stage-task/Exercises/Exercise-3/CallStation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "162">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             uuid = "253A6A7E-9D1D-4570-B3E9-E61F98856F63"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -71,6 +135,38 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "B84A8867-5E3B-488E-972B-61F18239E757"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios.stage-task/Exercises/Exercise-3/CallStation.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "calls()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "685F87A7-1E70-4922-AAD2-069E3497BAEA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios.stage-task/Exercises/Exercise-3/CallStation.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "execute(action:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             uuid = "39754885-599A-479B-969E-D67419DD1BC6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -78,8 +174,8 @@
             filePath = "ios.stage-task/Exercises/Exercise-3/CallStation.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "execute(action:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -110,8 +206,8 @@
             filePath = "ios.stage-task/Exercises/Exercise-3/CallStation.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "execute(action:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -126,10 +222,58 @@
             filePath = "ios.stage-task/Exercises/Exercise-3/CallStation.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "execute(action:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "589D88D5-545F-4BE0-A5FA-EBB4BC07BCC0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios.stage-task/Exercises/Exercise-3/CallStation.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "call(id:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "589D88D5-545F-4BE0-A5FA-EBB4BC07BCC0 - 7b33942e58c7c5e8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ios_stage_task.CallStation.call(id: Foundation.UUID) -&gt; Swift.Optional&lt;ios_stage_task.Call&gt;"
+                  moduleName = "ios.stage-task"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vyakulinsa/Desktop/RSSchool_Tasks/RSSchool_Task4/rs.ios.stage-task4/Swift_Task4/ios.stage-task/Exercises/Exercise-3/CallStation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "104"
+                  endingLineNumber = "104"
+                  offsetFromSymbolStart = "211">
+               </Location>
+               <Location
+                  uuid = "589D88D5-545F-4BE0-A5FA-EBB4BC07BCC0 - 876f8365c2129ecd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (ios_stage_task.Call) -&gt; Swift.Optional&lt;ios_stage_task.Call&gt; in ios_stage_task.CallStation.call(id: Foundation.UUID) -&gt; Swift.Optional&lt;ios_stage_task.Call&gt;"
+                  moduleName = "ios.stage-task"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vyakulinsa/Desktop/RSSchool_Tasks/RSSchool_Task4/rs.ios.stage-task4/Swift_Task4/ios.stage-task/Exercises/Exercise-3/CallStation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "99">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -174,8 +318,8 @@
             filePath = "ios.stage-task/Exercises/Exercise-3/CallStation.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
             landmarkName = "add(user:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -190,9 +334,25 @@
             filePath = "ios.stage-task/Exercises/Exercise-3/CallStation.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "execute(action:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B349134E-917F-4EFC-8BF0-EE760F1E2D2C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios.stage-task/Exercises/Exercise-3/CallStation.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "calls(user:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

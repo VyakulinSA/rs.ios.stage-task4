@@ -6,7 +6,6 @@ final class CallStation {
 }
 
 extension CallStation: Station {
-    
     func users() -> [User] {
         return usersBase //просто возвращаем всех юзеров
     }
@@ -19,21 +18,29 @@ extension CallStation: Station {
     }
     
     func remove(user: User) {
-        usersBase.removeAll { user in
-            user == user
+        var newUserBase = [User]()
+        _ = usersBase.map { user in
+            if user != user{ //если по юзеру находим наш звонок
+                newUserBase.append(user)
+            }
         }
+        usersBase = newUserBase
     }
     
     func execute(action: CallAction) -> CallID? {
         var call: Call //объявляем переменную для создания звонка
-        let uid: CallID = UUID() //создаем UID для возврата в него ид звонка из замыкания
+        var newCallBase = [Call]() //инициализируем пустую новую базу звонков
+        var uid: CallID = UUID() //создаем UID для возврата в него ид звонка из замыкания
+        //перебираем действия
         switch action {
         case .start(from: let from, to: let to):
             //проверяем, что оба пользователи зарегистрированы
-            if !usersBase.contains(from) && !usersBase.contains(to){ return nil }
+            if !usersBase.contains(from) && !usersBase.contains(to){
+                return nil
+            }
             //если только один зареган, то ошибка звонка
             if !usersBase.contains(from) || !usersBase.contains(to) {
-                call = Call(id: uid, incomingUser: from, outgoingUser: to, status: .ended(reason: .error))
+                call = Call(id: uid, incomingUser: from, outgoingUser: to, status: .ended(reason: .error)) //инициализируем новый звонок
                 callBase.append(call) //добавляем в базу новый звонок
                 return uid
             }
@@ -53,69 +60,99 @@ extension CallStation: Station {
             
         case .answer(from: let from):
             //если направлена команда ответа на звонок, значит в базе обновляем статус звонка
-            if !usersBase.contains(from){ //если в базе нет юзера, то звонок завершаем с ошибкой
-                _ = changeStatusForCall(from: from, action: .answer(from: from), newStatus: .ended(reason: .error))
+            //FIXME: перезапись БД
+            //пока нашел такой выход, перебрать все звонки, если нашли наш звонок, поменять у него статус и вернуть новую структуру с измененными звонками
+            //если бы по условию был класс звонка, было бы проще, можно было бы поменять просто статус у найденного
+            //на реальном проекте это бы была глина (возможно поменяю когда решу таск)
+            if !usersBase.contains(from){
+                _ = callBase.map { call in
+                    if call.outgoingUser == from{ //если по юзеру находим наш звонок в базу добаляем этот звонок с новым статусом
+                        newCallBase.append(Call(id: call.id,
+                                                incomingUser: call.incomingUser,
+                                                outgoingUser: call.outgoingUser,
+                                                status: .ended(reason: .error)))
+                        uid = call.id
+                    }else {
+                        newCallBase.append(call) //если не наш звонок, то просто добаляем на то же место
+                    }
+                }
+                callBase = newCallBase
                 return nil
             }else {
-                return changeStatusForCall(from: from,action: .answer(from: from), newStatus: .talk)
+                _ = callBase.map { call in
+                    if call.outgoingUser == from{ //если по юзеру находим наш звонок в базу добаляем этот звонок с новым статусом
+                        newCallBase.append(Call(id: call.id,
+                                                incomingUser: call.incomingUser,
+                                                outgoingUser: call.outgoingUser,
+                                                status: .talk))
+                        uid = call.id
+                    }else {
+                        newCallBase.append(call) //если не наш звонок, то просто добаляем на то же место
+                    }
+                }
+                callBase = newCallBase
+                return uid
             }
+
             
         case .end(from: let from):
-            return changeStatusForCall(from: from,action: .end(from: from), newStatus: .ended(reason: .end))
+            _ = callBase.map { call in
+                //если по юзеру находим наш звонок в базу добаляем этот звонок с новым статусом
+                if call.incomingUser == from || call.outgoingUser == from{
+                    var reason: CallEndReason = .end
+                    if call.status == .talk { reason = .end}
+                    if call.status == .calling {reason = .cancel}
+                    newCallBase.append(Call(id: call.id,
+                                            incomingUser: call.incomingUser,
+                                            outgoingUser: call.outgoingUser,
+                                            status: .ended(reason: reason)))
+                    uid = call.id
+                }else {
+                    newCallBase.append(call) //если не наш звонок, то просто добаляем на то же место
+                }
+            }
         }
+        callBase = newCallBase
+        return uid
     }
-    
     
     func calls() -> [Call] {
         return callBase
     }
     
     func calls(user: User) -> [Call] {
-        return callBase.filter { call in
-            call.incomingUser == user || call.outgoingUser == user
+        var callsUser = [Call]()
+        _ = callBase.map { call in
+            if call.incomingUser == user || call.outgoingUser == user{
+                callsUser.append(call)
+            }
         }
+        return callsUser
     }
     
     func call(id: CallID) -> Call? {
-        return callBase.first { call in
-            call.id == id
+        let resultCall = callBase.map { call -> Call? in
+            guard call.id == id else { return nil }
+            return call
         }
+        let result = resultCall.filter { call in
+            call != nil
+        }
+        return result.first ?? nil
     }
     
     func currentCall(user: User) -> Call? {
-        return callBase.first { call in
-            return (call.incomingUser == user || call.outgoingUser == user) && (call.status == .calling || call.status == .talk)
+        //через замыкание находим и возвращаем текущий звонок
+        let current = callBase.map { call -> Call? in
+            guard (call.incomingUser == user || call.outgoingUser == user) &&
+                    (call.status == .calling || call.status == .talk)
+            else { return nil}
+            return call
         }
+        let result = current.filter { call in
+            call != nil
+        }
+        return result.first ?? nil
     }
-}
-
-extension CallStation {
     
-    private func changeStatusForCall(from: User, action: CallAction, newStatus: CallStatus) -> CallID? {
-        var reasonStatus = newStatus
-        let indexOfCall: Array<Call>.Index?
-        //получаем индекс звонка в массиве
-        if action == .end(from: from) {
-            indexOfCall = callBase.firstIndex { call in
-                call.incomingUser == from || call.outgoingUser == from
-            }
-        }else {
-            indexOfCall = callBase.firstIndex { call in
-                call.outgoingUser == from
-            }
-        }
-        guard let indexOfCall = indexOfCall else { return nil}
-        let callingCall = callBase[indexOfCall]//получаем звонок из массива
-        //создаем замену звонка (на основе полученного звонка), т.к. это структура и его надо удалить из базы и заменить на другой
-        if action == .end(from: from) {
-            if callingCall.status == .talk { reasonStatus = .ended(reason: .end)}
-            if callingCall.status == .calling {reasonStatus = .ended(reason: .cancel)}
-        }
-
-        let call = Call(id: callingCall.id, incomingUser: callingCall.incomingUser, outgoingUser: callingCall.outgoingUser, status: reasonStatus)
-        callBase.remove(at: indexOfCall) //удаляем старый звонок
-        callBase.insert(call, at: indexOfCall) //добавляем звонок с замененым статусом
-        return call.id
-        
-    }
 }
